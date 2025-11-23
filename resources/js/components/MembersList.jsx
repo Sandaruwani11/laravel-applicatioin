@@ -8,7 +8,8 @@ export default function MembersList() {
   const [editing, setEditing] = useState(null);
 
   const fetchMembers = async (search='') => {
-    const url = '/api/members' + (search ? `?q=${encodeURIComponent(search)}` : '');
+    const url = 'http://localhost/accura-project/public/api/members' + (search ? `?q=${encodeURIComponent(search)}` : '');
+
     const res = await fetch(url);
     const data = await res.json();
     setMembers(data.data || data); // pagination or array

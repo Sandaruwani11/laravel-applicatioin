@@ -1,9 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    @vite('resources/js/app.jsx')
-  </head>
-  <body>
+<head>
+    @viteReactRefresh
+    @vite(['resources/css/app.css', 'resources/js/app.jsx'])
+</head>
+<body>
     <div id="app"></div>
-  </body>
+</body>
 </html>
