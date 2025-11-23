@@ -30,7 +30,9 @@ export default function MemberForm({ onSaved, editingMember, onCancel }) {
 
   const submit = async (e) => {
     e.preventDefault();
-    const url = editingMember ? `/api/members/${editingMember.id}` : '/api/members';
+    const url = editingMember 
+    ? `http://localhost/accura-project/public/api/members/${editingMember.id}`
+    : 'http://localhost/accura-project/public/api/members';
     const method = editingMember ? 'PUT' : 'POST';
 
     try {
