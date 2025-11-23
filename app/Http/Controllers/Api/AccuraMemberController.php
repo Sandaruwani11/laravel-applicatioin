@@ -45,7 +45,7 @@ class AccuraMemberController extends Controller
         return response()->json($accura_member);
     }
 
-    public function update(StoreAccuraMemberRequest $request, AccuraMember $accura_member)
+    public function update(StoreAccuraMemberRequest $request, AccuraMember $member)
     {
         $data = $request->validated();
 
@@ -56,14 +56,14 @@ class AccuraMemberController extends Controller
         // Do not overwrite summary unless you want to enforce 'ACCURA'
         $data['summary'] = 'ACCURA';
 
-        $accura_member->update($data);
+        $member->update($data);
 
-        return response()->json(['success' => true, 'member' => $accura_member]);
+        return response()->json(['success' => true, 'member' => $member]);
     }
 
-    public function destroy(AccuraMember $accura_member)
+    public function destroy(AccuraMember $member)
     {
-        $accura_member->delete();
+        $member->delete();
         return response()->json(['success' => true]);
     }
 }
